@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Calculator suite" parallel="classes" thread-count="4">
+    <listeners>
+        <listener class-name="com.epam.atm.calc.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Subtraction test">
+        <groups>
+            <run>
+                <include name="prod"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.atm.calc.tests.LongSubCalculationTestNG"/>
+            <class name="com.epam.atm.calc.tests.DoubleSubCalculationTestNG"/>
+        </classes>
+    </test>
+    <test name="Sum test">
+        <classes>
+            <class name="com.epam.atm.calc.tests.LongSumCalculationTestNG"/>
+            <class name="com.epam.atm.calc.tests.DoubleSumCalculationTestNG"/>
+        </classes>
+    </test>
+</suite>

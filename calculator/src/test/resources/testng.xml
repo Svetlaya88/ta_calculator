@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Calculator suite" parallel="classes" thread-count="2">
+    <listeners>
+        <listener class-name="com.epam.atm.calc.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Subtraction test">
+        <classes>
+            <class name="com.epam.atm.calc.tests.LongSubCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.DoubleSubCalculationTest"/>
+        </classes>
+    </test>
+    <test name="Sum test">
+        <groups>
+            <run>
+                <include name="prod"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.epam.atm.calc.tests.LongSumCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.DoubleSumCalculationTest"/>
+        </classes>
+    </test>
+    <test name="Other">
+        <classes>
+            <class name="com.epam.atm.calc.tests.CosCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.CtgCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.DoubleDivByZeroTest"/>
+            <class name="com.epam.atm.calc.tests.DoubleDivCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.DoubleMultCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.LongDivByZeroTest"/>
+            <class name="com.epam.atm.calc.tests.LongDivCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.LongMultCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.NegativeVerificationTest"/>
+            <class name="com.epam.atm.calc.tests.PositiveVerificationTest"/>
+            <class name="com.epam.atm.calc.tests.PowCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.SinCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.SqrtCalculationTest"/>
+            <class name="com.epam.atm.calc.tests.TgCalculationTest"/>
+        </classes>
+    </test>
+</suite>
